@@ -297,3 +297,25 @@ function fillRow(id, arr) {
  
 fillRow('row1', half1);
 fillRow('row2', half2);
+
+
+
+// scroll top
+
+window.addEventListener("scroll", () => {
+  const btn = document.querySelector(".back-top");
+
+  if (window.scrollY > 300) {
+    btn.classList.add("active");
+  } else {
+    btn.classList.remove("active");
+  }
+});
+
+document.querySelector(".back-top").addEventListener("click", (e) => {
+  e.preventDefault();
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
