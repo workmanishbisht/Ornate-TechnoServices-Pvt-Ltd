@@ -59,3 +59,20 @@ const swiper = new Swiper(".homeSwiper", {
     prevEl: ".swiper-button-prev",
   },
 });
+
+// hamburger section
+
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("navLinks");
+
+hamburger.addEventListener("click", () => {
+  hamburger.classList.toggle("open");
+  navLinks.classList.toggle("open");
+});
+
+navLinks.querySelectorAll("a").forEach((link) => {
+  link.addEventListener("click", () => {
+    hamburger.classList.remove("open");
+    navLinks.classList.remove("open");
+  });
+});
